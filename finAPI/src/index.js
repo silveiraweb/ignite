@@ -11,10 +11,10 @@ app.post("/account", (req, res) => {
     const customerAlreadyExists = customers.some(
         (customer) => customer.cpf);
     if(customerAlreadyExists){
-        return res.json("Customer already exists!");
+        return res.status(400).json("Customer already exists!");
     }
     customers.push({
-        id: uuidv4,
+        id: uuidv4(),
         cpf,
         name,
         statement: []
@@ -26,5 +26,9 @@ app.post("/account", (req, res) => {
 
 
 
+
+app.get("/", (req, res)=>{
+    return res.send("FinAPI");
+})
 
 app.listen(3001, () => console.log("Running..."))
