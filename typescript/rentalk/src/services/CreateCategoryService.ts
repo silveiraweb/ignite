@@ -11,7 +11,7 @@ interface IRequest{
  * [x] - Acessar o repositorio
  * 
  */
-class CreateCategoryServie {
+class CreateCategoryService {
     constructor(private categoriesRepository: CategoriesRepository){
 
     }
@@ -25,4 +25,4 @@ class CreateCategoryServie {
     }
 }
 
-export { CreateCategoryServie }
+export { CreateCategoryService }
