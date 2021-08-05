@@ -6,6 +6,13 @@ app.use(express.json());
 
 const customers = [];
 
+app.get("/", (req, res) => {
+	return res.send("FinAPI accounts");
+});
+
+/**
+ * 
+ */
 app.post("/account", (req, res) => {
     const {name, cpf} = req.body;
     const customerAlreadyExists = customers.some(
@@ -20,15 +27,11 @@ app.post("/account", (req, res) => {
         statement: []
 
     });
-    return  res.status(200).send();
-})
+    return res.status(200).send(customers);
+});
 
 
 
 
-
-app.get("/", (req, res)=>{
-    return res.send("FinAPI");
-})
 
 app.listen(3001, () => console.log("Running..."))

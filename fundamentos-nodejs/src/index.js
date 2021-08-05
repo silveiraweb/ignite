@@ -18,7 +18,7 @@ app.get("/courses", (req, res) => {
 app.post("/courses", (req, res) => {
     const body = req.body;
     console.log("Body params post: " + body);
-    return res.json(["Curso 1", "Curso 2", "Curso 3", "Curso 4"]);
+    return res.json(["Curso 1", "Curso 2", "Curso 3", "Curso 4", body]);
 });
 
 app.put("/courses/:id", (req,  res) => {
