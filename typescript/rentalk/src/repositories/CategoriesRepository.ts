@@ -1,6 +1,6 @@
 import { Category } from "../model/Category";
 
-//DTO = Data Tranfer Object
+//DTO = Data Transfer Object
 interface ICreateCategoryDTO {
     name: string; 
     description: string;
@@ -12,7 +12,6 @@ class CategoriesRepository {
     constructor(){
         this.categories = [];
     }
-
     create({ name, description }: ICreateCategoryDTO): void{
         const category = new Category();
         Object.assign(category, {
