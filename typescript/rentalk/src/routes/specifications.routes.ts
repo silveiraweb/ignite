@@ -12,6 +12,10 @@ specificationsRoutes.post('/', (req, res) => {
     createSpecificationService.execute({ name, description });
     return res.status(201).send();
 })
+specificationsRoutes.get("/", (req, res) => {
+    const specifications = specificationRepository.list();
 
+    return res.json({ specifications }).status(200);
+});
 
 export { specificationsRoutes };
